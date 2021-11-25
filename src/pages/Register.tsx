@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 
-import HeaderContainer from "../components/HeaderContainer";
+import RegisterContainer from "../components/RegisterContainer";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
             <IonTitle size="large">ToDoList</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <HeaderContainer />
+        <RegisterContainer />
       </IonContent>
     </IonPage>
   );
