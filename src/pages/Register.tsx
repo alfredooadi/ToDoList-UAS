@@ -1,18 +1,25 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import React from "react";
 
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { arrowBackOutline } from "ionicons/icons";
 import RegisterContainer from "../components/RegisterContainer";
 import "./Home.css";
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader></IonHeader>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonButton routerLink="/">
+              <IonIcon icon={arrowBackOutline} />
+            </IonButton>
+            <IonTitle>Register Page</IonTitle>
+          </IonButtons>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">ToDoList</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <IonHeader collapse="condense"></IonHeader>
         <RegisterContainer />
       </IonContent>
     </IonPage>

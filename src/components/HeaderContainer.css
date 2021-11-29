@@ -59,3 +59,10 @@
 .date-section span {
   margin: 4px;
 }
+
+.error-msg {
+  color: red;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+}

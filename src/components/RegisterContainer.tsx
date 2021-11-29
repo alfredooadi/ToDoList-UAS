@@ -17,7 +17,7 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
     <div className="container">
       <br></br>
       <br></br>
-      <h2>Register Page</h2>
+      <h2>Register</h2>
       <br></br>
       <form autoComplete="off" className="form-group" onSubmit={handleRegister}>
         <label>Full Name</label>
@@ -35,7 +35,7 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
       </form>
       {registError && <div className="error-msg">{registError}</div>}
       <span>
-        Already have an account ? <Link to="/login">Login Here</Link>{" "}
+        Already have an account ? <Link to="/login">Login Here</Link>
       </span>
     </div>
   );

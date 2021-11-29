@@ -1,23 +1,29 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import React from "react";
+
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { arrowBackOutline } from "ionicons/icons";
+
+import LoginContainer from "../components/LoginContainer";
+import "./Home.css";
 
 const Login: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Login Page</IonTitle>
+          <IonButtons slot="start">
+            <IonButton routerLink="/">
+              <IonIcon icon={arrowBackOutline} />
+            </IonButton>
+            <IonTitle>Login Page</IonTitle>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
-        <IonInput placeholder="Username" />
-        <IonInput placeholder="Password" />
-        <IonButton>Login</IonButton>
-
-        <p>
-          Create Account?<Link to="register">Register</Link>
-        </p>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense"></IonHeader>
+        <LoginContainer />
       </IonContent>
     </IonPage>
   );
