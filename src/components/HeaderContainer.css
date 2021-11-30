@@ -1,9 +1,8 @@
 .header-box {
   width: 100%;
-  height: auto;
-  padding: 50px;
-  display: flex;
-  justify-content: space-evenly;
+  height: 100%;
+  padding: 50px 10px 50px 10px;
+  justify-content: center;
   align-items: center;
   background-color: #0170ad;
 }
@@ -11,7 +10,8 @@
 .header-box .leftside {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
+
+  justify-content: center;
   align-items: center;
 }
 
@@ -39,6 +39,7 @@
 .header-box .rightside {
   flex: 1;
   display: flex;
+  padding: 200px 10px 10px 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

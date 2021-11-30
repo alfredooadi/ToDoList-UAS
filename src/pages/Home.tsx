@@ -1,14 +1,16 @@
-import { IonContent, IonPage } from "@ionic/react";
+import { IonContent, IonHeader, IonPage, IonToolbar } from "@ionic/react";
 
 import BodyContainer from "../components/BodyContainer";
-import HeaderHomeContainer from "../components/HeaderHomeContainer";
 import "./Home.css";
 
 const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <HeaderHomeContainer />
+        <IonHeader collapse="condense">
+          <IonToolbar></IonToolbar>
+        </IonHeader>
+
         <BodyContainer />
       </IonContent>
     </IonPage>
