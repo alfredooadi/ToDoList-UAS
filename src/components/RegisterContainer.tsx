@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc, doc, setDoc } from "firebase/firestore"
+import { Link, useHistory } from "react-router-dom";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore"
 import  { auth, db }  from '../firebaseConfig';
 import "./HeaderContainer.css";
 interface ContainerProps {}
@@ -12,6 +12,7 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [registError, setRegistError] = useState("");
+  const history = useHistory();
 
   const handleRegister = async () => {
     setLoading(true);
@@ -20,6 +21,7 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
       await setDoc(doc(db, "users", user.user.uid), {
         fullname : fullName
       });
+      history.push("/home");
       console.log("Document written ID: ", user.user.uid);
     } catch (e){
       if (e == 'FirebaseError: Firebase: Error (auth/email-already-in-use).'){

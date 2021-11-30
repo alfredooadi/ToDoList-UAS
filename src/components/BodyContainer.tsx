@@ -1,7 +1,21 @@
 import React from "react";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { useHistory } from "react-router-dom";
+import  { auth, db }  from '../firebaseConfig';
 interface ContainerProps {}
 
 const BodyContainer: React.FC<ContainerProps> = () => {
+  const history = useHistory();
+  
+  const logout = async () => {
+    try{
+      await signOut(auth);
+      history.push('/')
+    } catch {
+      alert('Failed to log out')
+    }
+  };
+
   return (
     <div className="wrapper">
       <br></br>
@@ -18,6 +32,7 @@ const BodyContainer: React.FC<ContainerProps> = () => {
           </div>
         </form>
       </div>
+      <button onClick={logout}>Log Out</button>
     </div>
   );
 };

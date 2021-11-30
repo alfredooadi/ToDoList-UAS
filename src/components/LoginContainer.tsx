@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import  { auth }  from '../firebaseConfig';
 import "./HeaderContainer.css";
@@ -9,25 +9,20 @@ const LoginContainer: React.FC<ContainerProps> = () => {
   const [loading, setLoading] = useState(false);
   const [loginemail, setLoginemail] = useState("");
   const [loginpassword, setLoginpassword] = useState("");
-
+  const history = useHistory();
+  
   const handleLogin = async () => {
     setLoading(true);
     try {
       const user = await signInWithEmailAndPassword(auth, loginemail, loginpassword);
       console.log("Logged In");
+      history.push("/home");
     } catch (e){
       alert("Incorrect Email or Password!");
       console.error(e);
     }
     setLoading(false);
   };
-
-  // useEffect(() => {
-  //   if (loading) {
-      
-  //     return;
-  //   }
-  // }, [loading]);
 
   return (
     <div className="container">
