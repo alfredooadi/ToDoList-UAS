@@ -24,7 +24,7 @@ import Header from "./pages/Header";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Addsch from "./pages/Addsch";
+import Addtask from "./pages/Addtask";
 
 const App: React.FC = () => (
   <IonApp>
@@ -34,7 +34,7 @@ const App: React.FC = () => (
         <Route path="/login" component={Login} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/home" component={Home} exact />
-        <Route path="/addsch" component={Addsch} exact />
+        <Route path="/addtask" component={Addtask} exact />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

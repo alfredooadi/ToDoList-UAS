@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IonButton, IonCol, IonContent, IonDatetime, IonFab, IonFabButton, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTextarea, IonToolbar } from "@ionic/react";
 import { chevronBack, cloudUpload } from "ionicons/icons";
 
-const Addsch: React.FC = () => {
+const Addtask: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [text, setText] = useState<string>();
   
@@ -80,4 +80,4 @@ const Addsch: React.FC = () => {
   );
 };
 
-export default Addsch;
+export default Addtask;
