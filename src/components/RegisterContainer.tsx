@@ -17,11 +17,17 @@ const RegisterContainer: React.FC<ContainerProps> = () => {
     setLoading(true);
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      await addDoc(collection(db, "users"), setDoc(doc(db, "users", user.user.uid), {
+      await setDoc(doc(db, "users", user.user.uid), {
         fullname : fullName
-      }));
+      });
       console.log("Document written ID: ", user.user.uid);
     } catch (e){
+      if (e == 'FirebaseError: Firebase: Error (auth/email-already-in-use).'){
+        alert('Email has already in use');
+      }
+      if (e == 'FirebaseError: Firebase: Password should be at least 6 characters (auth/weak-password).'){
+        alert('Password should be at least 6 characters');
+      }
       console.error(e);
     }
     setLoading(false);

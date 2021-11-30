@@ -1,13 +1,9 @@
 import React from "react";
-import "./HeaderContainer.css";
-import HeaderContainer from "../components/HeaderContainer";
-
 interface ContainerProps {}
 
 const BodyContainer: React.FC<ContainerProps> = () => {
   return (
     <div className="wrapper">
-      <HeaderContainer />
       <br></br>
       <br></br>
       <div className="container">

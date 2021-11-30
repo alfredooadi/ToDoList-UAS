@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import  { auth, db }  from '../firebaseConfig';
+import  { auth }  from '../firebaseConfig';
 import "./HeaderContainer.css";
 interface ContainerProps {}
 
@@ -14,13 +14,20 @@ const LoginContainer: React.FC<ContainerProps> = () => {
     setLoading(true);
     try {
       const user = await signInWithEmailAndPassword(auth, loginemail, loginpassword);
-      console.log("yes");
+      console.log("Logged In");
     } catch (e){
       alert("Incorrect Email or Password!");
       console.error(e);
     }
     setLoading(false);
   };
+
+  // useEffect(() => {
+  //   if (loading) {
+      
+  //     return;
+  //   }
+  // }, [loading]);
 
   return (
     <div className="container">
