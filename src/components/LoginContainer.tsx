@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
+<<<<<<< HEAD
 import { auth } from "../firebaseConfig";
+=======
+import  { auth }  from '../firebaseConfig';
+>>>>>>> 3a1a8a82bc59a68a3027a11da2870b7915589ae4
 import "./HeaderContainer.css";
 interface ContainerProps {}
 
@@ -10,14 +14,22 @@ const LoginContainer: React.FC<ContainerProps> = () => {
   const [loginemail, setLoginemail] = useState("");
   const [loginpassword, setLoginpassword] = useState("");
   const history = useHistory();
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 3a1a8a82bc59a68a3027a11da2870b7915589ae4
   const handleLogin = async () => {
     setLoading(true);
     try {
       const user = await signInWithEmailAndPassword(auth, loginemail, loginpassword);
       console.log("Logged In");
       history.push("/home");
+<<<<<<< HEAD
     } catch (e) {
+=======
+    } catch (e){
+>>>>>>> 3a1a8a82bc59a68a3027a11da2870b7915589ae4
       alert("Incorrect Email or Password!");
       console.error(e);
     }
