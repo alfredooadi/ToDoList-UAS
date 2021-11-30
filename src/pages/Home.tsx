@@ -1,7 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 
 import BodyContainer from "../components/BodyContainer";
-import HeaderHomeContainer from "../components/HeaderHomeContainer";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -10,11 +9,9 @@ const Home: React.FC = () => {
       <IonHeader></IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">ToDoList</IonTitle>
-          </IonToolbar>
+          <IonToolbar></IonToolbar>
         </IonHeader>
-        <HeaderHomeContainer />
+
         <BodyContainer />
       </IonContent>
     </IonPage>
